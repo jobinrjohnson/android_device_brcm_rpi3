@@ -15,15 +15,17 @@
 #
 
 DEVICE_PACKAGE_OVERLAYS += device/brcm/rpi3/overlay
+USE_OEM_TV_APP := true
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 $(call inherit-product, vendor/brcm/rpi3/rpi3-vendor.mk)
+$(call inherit-product, device/google/atv/products/atv_base.mk)
 
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := mdpi
-PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_AAPT_CONFIG := mdpi tvdpi hdpi
+PRODUCT_AAPT_PREF_CONFIG := tvdpi
+PRODUCT_CHARACTERISTICS := tv
 
 # Audio
 PRODUCT_PACKAGES += \
