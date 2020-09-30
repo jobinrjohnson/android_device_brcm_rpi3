@@ -3,11 +3,11 @@ TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SCREEN_WIDTH := 1280
 TARGET_SCREEN_HEIGHT := 720
 
-# Inherit device configuration
-$(call inherit-product, device/brcm/rpi3/rpi3.mk)
-
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_tv.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/brcm/rpi3/device.mk)
 
 # Su
 WITH_SU := true
@@ -23,3 +23,5 @@ PRODUCT_BRAND := Raspberry
 PRODUCT_MODEL := Raspberry Pi 3
 PRODUCT_MANUFACTURER := Raspberry
 PRODUCT_RELEASE_NAME := Raspberry Pi 3
+
+
