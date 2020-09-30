@@ -47,14 +47,6 @@
                cell broadcasting sms, and MMS. -->
     <bool name="config_sms_capable">false</bool>
 
-    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
-         autodetected from the Configuration. -->
-    <bool name="config_showNavigationBar">true</bool>
-
-    <!-- Sets whether menu shortcuts should be displayed on panel menus when
-         a keyboard is present. -->
-    <bool name="config_showMenuShortcutsWhenKeyboardPresent">true</bool>
-
     <!-- Flag indicating that this device does not rotate and will always remain in its default
          orientation. Activities that desire to run in a non-compatible orientation will be run
          from an emulated display within the physical display. -->
@@ -67,6 +59,14 @@
          app requesting portrait will cause a counter-clockwise rotation.  Setting
          true here reverses that logic. -->
     <bool name="config_reverseDefaultRotation">true</bool>
+
+    <!-- Control the default UI mode type to use when there is no other type override
+         happening.  One of the following values (See Configuration.java):
+             1  UI_MODE_TYPE_NORMAL
+             4  UI_MODE_TYPE_TELEVISION
+             5  UI_MODE_TYPE_APPLIANCE
+         Any other values will have surprising consequences. -->
+    <integer name="config_defaultUiModeType">4</integer>
 
     <!-- This string array should be overridden by the device to present a list of network
          attributes.  This is used by the connectivity manager to decide which networks can coexist
@@ -106,6 +106,9 @@
         <item>1</item>
         <item>9</item>
     </integer-array>
+
+    <!-- Apps that are authorized to access shared accounts -->
+    <string name="config_appsAuthorizedForSharedAccounts">;com.android.tv.settings;</string>
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
