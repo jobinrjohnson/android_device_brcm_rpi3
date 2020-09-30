@@ -3,11 +3,11 @@ TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SCREEN_WIDTH := 1280
 TARGET_SCREEN_HEIGHT := 720
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tv.mk)
-
 # Inherit device configuration
 $(call inherit-product, device/brcm/rpi3/rpi3.mk)
+
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/lineage/config/common_full_tv.mk)
 
 # Su
 WITH_SU := true
