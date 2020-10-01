@@ -14,9 +14,6 @@
 
 # common stuffs across rpi3
 
-# Host modules
-PRODUCT_PACKAGES += \
-
 # Device modules
 PRODUCT_PACKAGES += \
     bootctl \
@@ -43,7 +40,11 @@ PRODUCT_PACKAGES += \
     CarrierConfig \
     audio.r_submix.default \
     local_time.default \
-    SdkSetup
+    SdkSetup \
+    power.default \
+    vibrator.default \	
+    audio \
+    network
 
 # PRODUCT_PACKAGES += \
 #     DeskClock \
@@ -206,3 +207,8 @@ PRODUCT_PACKAGES += \
 	libGLES_mesa \
 	gralloc.drm \
 	hwcomposer.drm \
+
+# TODO(b/78308559): includes vr_hwc into GSI before vr_hwc move to vendor
+PRODUCT_PACKAGES += \
+    vr_hwc
+
