@@ -32,14 +32,17 @@ PRODUCT_CHARACTERISTICS := tv
 PRODUCT_LOCALES := en_US zh_CN zh_HK zh_TW
 
 # default is nosdcard, S/W button enabled in resource
-# DEVICE_PACKAGE_OVERLAYS := device/brobwind/rpi3/overlay
 PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_SHIPPING_API_LEVEL := 28
+
+DEVICE_PACKAGE_OVERLAYS +:= \
+    device/brobwind/rpi3/overlay 
 
 PRODUCT_PACKAGES += \
     TvSampleLeanbackLauncher \
     Chrome \
-    RPiTool
+    RPiTool \
+    RpLauncher 
 
 # It takes too much GPU memory
 PRODUCT_COPY_FILES += \

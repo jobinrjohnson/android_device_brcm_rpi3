@@ -42,9 +42,10 @@ PRODUCT_PACKAGES += \
     local_time.default \
     SdkSetup \
     power.default \
-    vibrator.default \	
+    vibrator.default \
     audio \
-    network
+    network \
+    ethernet-service
 
 # PRODUCT_PACKAGES += \
 #     DeskClock \
