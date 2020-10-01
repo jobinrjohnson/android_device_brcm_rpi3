@@ -29,7 +29,7 @@
     <feature name="android.software.input_methods" />
     <feature name="android.software.companion_device_setup" />
     <feature name="android.software.cant_save_state" />
-
+USE_OEM_TV_APP := true
     <!-- Feature to specify if the device supports adding device admins. -->
     <feature name="android.software.device_admin" />
 

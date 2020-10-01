@@ -10,18 +10,22 @@ PRODUCT_COPY_FILES += \
     device/brobwind/rpi3/mkshrc:system/etc/mkshrc \
     device/brobwind/rpi3/vndk/ld.config.28.txt:system/etc/ld.config.28.txt
 
+USE_OEM_TV_APP := true
+
 # Inherit common Android Go 512M.
 $(call inherit-product, build/target/product/go_defaults_512.mk)
 
-$(call inherit-product, device/brobwind/rpi3/mini_common.mk)
+$(call inherit-product, device/google/atv/products/atv_base.mk)
 $(call inherit-product, device/brobwind/rpi3/mini_rpi3_common.mk)
 
 PRODUCT_NAME := rpi3
 PRODUCT_DEVICE := rpi3
 PRODUCT_BRAND := Android
 PRODUCT_MANUFACTURER := brobwind
-PRODUCT_MODEL := Mini for RPI3
+PRODUCT_MODEL := RPI 3 Android TV
 
+PRODUCT_AAPT_PREF_CONFIG := tvdpi
+PRODUCT_CHARACTERISTICS := tv
 PRODUCT_LOCALES := en_US zh_CN zh_HK zh_TW
 
 # default is nosdcard, S/W button enabled in resource

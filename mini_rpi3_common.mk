@@ -45,9 +45,9 @@ PRODUCT_PACKAGES += \
     local_time.default \
     SdkSetup
 
-PRODUCT_PACKAGES += \
-    DeskClock \
-    Launcher3Go \
+# PRODUCT_PACKAGES += \
+#     DeskClock \
+#     Launcher3Go \
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
