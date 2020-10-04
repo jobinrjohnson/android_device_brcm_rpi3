@@ -16,8 +16,8 @@
 
 USE_OEM_TV_APP := true
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults_512.mk)
+$(call inherit-product, vendor/brcm/rpi-common/rpi-common-vendor.mk)
 $(call inherit-product, vendor/brcm/rpi3/rpi3-vendor.mk)
 $(call inherit-product, device/google/atv/products/atv_base.mk)
 
@@ -27,6 +27,9 @@ PRODUCT_CHARACTERISTICS := tv
 
 DEVICE_PACKAGE_OVERLAYS += device/brcm/rpi3/overlay
 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.setupwizard.mode=DISABLED
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -35,7 +38,8 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.rpi3 \
     audio.r_submix.default \
-    audio.usb.default
+    audio.usb.default \
+    power.default
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.conf:vendor/etc/audio_effects.conf \
