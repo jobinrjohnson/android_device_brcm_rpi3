@@ -12,6 +12,7 @@ on init
 
 on fs
     mount_all /fstab.rpi3
+    swapon_all /fstab.rpi3
 
 on post-fs-data
     # Set indication (checked by vold) that we have finished this action
