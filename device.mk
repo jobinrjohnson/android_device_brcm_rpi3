@@ -47,7 +47,10 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:vendor/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:vendor/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:vendor/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:vendor/etc/usb_audio_policy_configuration.xml 
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:vendor/etc/usb_audio_policy_configuration.xml \
+    $(LOCAL_PATH)/ramdisk/init.rpi3.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.rpi3.rc \
+    $(LOCAL_PATH)/ramdisk/ueventd.rpi3.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+    $(LOCAL_PATH)/ramdisk/fstab.rpi3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rpi3 
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -77,10 +80,22 @@ PRODUCT_PACKAGES += \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader \
     libyuv \
-    memtrack.rpi3
-#    gralloc.rpi3 \
-#    hwcomposer.rpi3 \
-#    libGLES_mesa
+    memtrack.rpi3 \
+    libGLES_mesa \
+    gralloc \
+    libhwminijail \
+    gallium_dri \
+    vc4_dri \
+    gralloc.default \
+    gralloc.minigbm \
+    gralloc.rpi \
+    hwcomposer.drm_minigbm \
+    hwcomposer.rpi \
+    libglapi \
+    libhwc2on1adapter \
+    libhwc2onfbadapter \
+    libhwminijail \
+    libavservices_minijail_vendor 
 
 # I2C
 PRODUCT_PACKAGES += \
