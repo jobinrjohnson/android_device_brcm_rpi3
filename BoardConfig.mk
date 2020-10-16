@@ -17,12 +17,15 @@ TARGET_NO_BOOTLOADER := true
 
 
 # Kernel
-TARGET_NO_KERNEL := true
-TARGET_PREBUILT_KERNEL := device/brobwind/rpi3/boot/kernel-v4.14/vmlinuz-4.14.61-v8+
+TARGET_NO_KERNEL         := false
+TARGET_KERNEL_ARCH       := arm64
 BOARD_KERNEL_CMDLINE     := console=ttyS0,115200
 BOARD_KERNEL_BASE        := 0x10000000
 BOARD_MKBOOTIMG_ARGS     := --kernel_offset 0x080000 --ramdisk_offset 0x01000000
 BOARD_KERNEL_PAGESIZE    := 2048
+BOARD_KERNEL_IMAGE_NAME  := zImage
+TARGET_KERNEL_CONFIG 	 := bcmrpi3_defconfig
+TARGET_KERNEL_SOURCE 	 := kernel/brcm/rpi3
 
 
 # Audio

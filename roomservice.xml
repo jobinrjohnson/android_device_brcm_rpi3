@@ -7,7 +7,6 @@
   <remove-project name="platform/external/mesa3d" />
   <remove-project name="platform/external/swiftshader"/>
 
-
   <remote name="brobwind"
     fetch="https://github.com/brobwind"/>
 
@@ -15,6 +14,5 @@
   <project path="device/brobwind/rpi3/hals/display/mesa3d" name="pie-device-brobwind-rpi3-mesa3d" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
   <project path="device/brobwind/rpi3/hals/display/minigbm" name="pie-device-brobwind-rpi3-minigbm" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
   <project path="device/brobwind/rpi3/u-boot" name="pie-device-brobwind-rpi3-u-boot" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
-  <project path="device/brobwind/rpi3" name="pie-device-brobwind-rpi3" remote="brobwind" revision="master"/>
-  <project path="kernel-v4.14" name="pie-device-brobwind-rpi3-kernel-v4.14" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
+  <project path="kernel/brcm/rpi3" name="pie-device-brobwind-rpi3-kernel-v4.14" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
 </manifest>
