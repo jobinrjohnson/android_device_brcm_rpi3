@@ -228,6 +228,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     vr_hwc
 
+PRODUCT_PACKAGES += \
+    RPiTool
+
 # default is nosdcard, S/W button enabled in resource
 DEVICE_PACKAGE_OVERLAYS += device/brobwind/rpi3/overlay
 PRODUCT_CHARACTERISTICS := nosdcard

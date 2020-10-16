@@ -10,8 +10,6 @@ PRODUCT_COPY_FILES += \
     device/brobwind/rpi3/mkshrc:system/etc/mkshrc \
     device/brobwind/rpi3/vndk/ld.config.28.txt:system/etc/ld.config.28.txt
 
-# Bootanim
-TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SCREEN_WIDTH := 1280
 TARGET_SCREEN_HEIGHT := 720
 
@@ -24,13 +22,8 @@ $(call inherit-product, device/brobwind/rpi3/rpi3.mk)
 PRODUCT_DEVICE := rpi3
 PRODUCT_NAME := lineage_rpi3
 PRODUCT_BRAND := Raspberry
-PRODUCT_MODEL := Raspberry Pi 3
+PRODUCT_MODEL := Raspberry Pi 3 TV
 PRODUCT_MANUFACTURER := Raspberry
-PRODUCT_RELEASE_NAME := Raspberry Pi 3
+PRODUCT_RELEASE_NAME := Raspberry Pi 3 TV
 
-PRODUCT_LOCALES := en_US zh_CN zh_HK zh_TW
-
-PRODUCT_PACKAGES += \
-    Chrome \
-    RPiTool
-
+PRODUCT_LOCALES := en_US
