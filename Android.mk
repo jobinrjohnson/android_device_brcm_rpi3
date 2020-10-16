@@ -18,5 +18,5 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),rpi3)
 include $(call all-makefiles-under,$(LOCAL_PATH))
-$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr/include)
+$(shell mkdir -p $(OUT_DIR)/obj/KERNEL_OBJ/usr/include)
 endif

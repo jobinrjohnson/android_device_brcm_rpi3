@@ -12,16 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+USE_OEM_TV_APP := true
 
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-# Inherit common Android Go 512M.
-$(call inherit-product, build/target/product/go_defaults_512.mk)
-
-$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
-
-# Host modules
-PRODUCT_PACKAGES += \
+$(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults_512.mk)
+$(call inherit-product, device/google/atv/products/atv_base.mk)
 
 # Device modules
 PRODUCT_PACKAGES += \
@@ -48,12 +42,7 @@ PRODUCT_PACKAGES += \
     toybox_vendor \
     CarrierConfig \
     audio.r_submix.default \
-    local_time.default \
-    SdkSetup
-
-PRODUCT_PACKAGES += \
-    DeskClock \
-    Launcher3Go \
+    local_time.default 
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -188,13 +177,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_FULL_TREBLE_OVERRIDE := false
 
-#watchdog tiggers reboot because location service is not
-#responding, disble it for now.
-#still keep it on internal master as it is still working
-#once it is fixed in aosp, remove this block of comment.
-#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-#config.disable_location=true
-
 # Enable Perfetto traced
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.traced.enable=1
@@ -234,3 +216,19 @@ PRODUCT_PACKAGES += \
     sdptool \
     vibrator.default \
     wpa_supplicant.conf
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.isa.arm.variant=cortex-a53 \
+    debug.hwui.use_partial_updates=0 \
+    ro.frp.pst=/dev/block/platform/soc/3f202000.mmc/by-name/frp \
+    ro.sf.lcd_density=240 \
+    ro.opengles.version=131072 \
+
+# TODO(b/78308559): includes vr_hwc into GSI before vr_hwc move to vendor
+PRODUCT_PACKAGES += \
+    vr_hwc
+
+# default is nosdcard, S/W button enabled in resource
+DEVICE_PACKAGE_OVERLAYS += device/brobwind/rpi3/overlay
+PRODUCT_CHARACTERISTICS := nosdcard
+PRODUCT_SHIPPING_API_LEVEL := 28
