@@ -3,18 +3,25 @@
 # Product-specific compile-time definitions.
 #
 
+LOCAL_PATH := device/brobwind/rpi3
+
 # The generic product target doesn't have any hardware-specific pieces.
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_KERNEL := false
-TARGET_ARCH := arm
+TARGET_NO_KERNEL := true
 
+
+TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
+TARGET_BOOTLOADER_BOARD_NAME := rpi3
+
+# Kernel
+TARGET_PREBUILT_KERNEL := device/brobwind/rpi3/boot/kernel-v4.14/vmlinuz-4.14.61-v8+
+
 HAVE_HTC_AUDIO_DRIVER := true
 BOARD_USES_GENERIC_AUDIO := true
-TARGET_BOOTLOADER_BOARD_NAME := rpi3
 
 TARGET_USES_64_BIT_BINDER := true
 

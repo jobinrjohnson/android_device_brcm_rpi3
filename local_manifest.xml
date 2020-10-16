@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remove-project name="device/google/accessory/arduino" />
-  <remove-project name="device/google/accessory/demokit" />
-  <remove-project name="device/google/atv" />
-  <remove-project name="device/google/cuttlefish" />
-  <remove-project name="device/google/cuttlefish_common" />
-  <remove-project name="device/google/cuttlefish_kernel" />
-  <remove-project name="device/google/marlin" />
-  <remove-project name="device/google/marlin-kernel" />
-  <remove-project name="device/google/muskie" />
-  <remove-project name="device/google/taimen" />
-  <remove-project name="device/google/vrservices" />
-  <remove-project name="device/google/wahoo" />
-  <remove-project name="device/google/wahoo-kernel" />
-  <remove-project name="device/linaro/bootloader/arm-trusted-firmware" />
-  <remove-project name="device/linaro/bootloader/edk2" />
-  <remove-project name="device/linaro/bootloader/OpenPlatformPkg" />
-  <remove-project name="device/linaro/hikey" />
-  <remove-project name="device/linaro/hikey-kernel" />
 
   <remove-project name="platform/external/drm_gralloc" />
   <remove-project name="platform/external/drm_hwcomposer" />
@@ -33,5 +15,6 @@
   <project path="device/brobwind/rpi3/hals/display/mesa3d" name="pie-device-brobwind-rpi3-mesa3d" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
   <project path="device/brobwind/rpi3/hals/display/minigbm" name="pie-device-brobwind-rpi3-minigbm" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
   <project path="device/brobwind/rpi3/u-boot" name="pie-device-brobwind-rpi3-u-boot" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
+  <project path="device/brobwind/rpi3" name="pie-device-brobwind-rpi3" remote="brobwind" revision="master"/>
   <project path="kernel-v4.14" name="pie-device-brobwind-rpi3-kernel-v4.14" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
 </manifest>

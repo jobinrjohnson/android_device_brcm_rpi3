@@ -1,22 +1,22 @@
 #
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_rpi3.mk
+LOCAL_PATH := $(call my-dir)
 
-COMMON_LUNCH_CHOICES := \
-    lineage_rpi3-user \
-    lineage_rpi3-userdebug \
-    lineage_rpi3-eng
+ifeq ($(TARGET_DEVICE),rpi3)
+include $(call all-makefiles-under,$(LOCAL_PATH))
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr/include)
+endif
