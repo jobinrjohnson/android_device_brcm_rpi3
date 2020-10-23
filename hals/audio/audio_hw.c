@@ -41,9 +41,9 @@
 #include <hardware/audio_alsaops.h>
 #include <audio_effects/effect_aec.h>
 
+#define CARD_OUT 0
+#define PORT_CODEC 1
 
-#define CARD_OUT 1
-#define PORT_CODEC 0
 /* Minimum granularity - Arbitrary but small value */
 #define CODEC_BASE_FRAME_COUNT 32
 
