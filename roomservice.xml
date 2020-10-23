@@ -14,5 +14,10 @@
   <project path="device/brobwind/rpi3/hals/display/mesa3d" name="pie-device-brobwind-rpi3-mesa3d" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
   <project path="device/brobwind/rpi3/hals/display/minigbm" name="pie-device-brobwind-rpi3-minigbm" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
   <project path="device/brobwind/rpi3/u-boot" name="pie-device-brobwind-rpi3-u-boot" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
-  <project path="kernel/brcm/rpi3" name="pie-device-brobwind-rpi3-kernel-v4.14" remote="brobwind" revision="pie-device-brobwind-rpi3"/>
+
+  <remote name="jobinrjohnson"
+    fetch="https://github.com/jobinrjohnson"/>
+
+  <project path="kernel/brcm/rpi3" name="kernel_brcm_rpi3" remote="jobinrjohnson" revision="lineage-16.0"/>
+
 </manifest>
